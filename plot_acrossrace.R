@@ -54,11 +54,11 @@ plot_race <- function(d) {
  theme_bw()
  #scale_y_continuous(limits=c(18,35))+
 }
-save_img <-function(f,p) ggsave(path.expand('imgs',f),p,width=11,height=5)
+save_img <-function(f,p) ggsave(path.expand(c('imgs',f)),p,width=11,height=5)
 
 
 ## 
-p.foran <- d %>% filterpeps(c('foran','emily mente')) %>% plot_race
+p.foran <- d %>% filterpeps(c('foran','rachel elder','emily mente')) %>% plot_race
 pf.line <- p.foran + geom_line()
 pf.lm <- p.foran + geom_smooth(method='lm',se=F) 
 
